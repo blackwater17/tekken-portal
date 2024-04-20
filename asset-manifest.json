@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/tekken-portal/static/css/main.950da081.css",
+    "main.js": "/tekken-portal/static/js/main.9775a020.js",
+    "static/media/bg2.jpg": "/tekken-portal/static/media/bg2.ade4061fd5e0eca8f693.jpg",
+    "index.html": "/tekken-portal/index.html",
+    "main.950da081.css.map": "/tekken-portal/static/css/main.950da081.css.map",
+    "main.9775a020.js.map": "/tekken-portal/static/js/main.9775a020.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.950da081.css",
+    "static/js/main.9775a020.js"
+  ]
+}
