@@ -1,0 +1,220 @@
+@import './base';
+@import './components/header';
+@import './components/character';
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
+body {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page-container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-container:after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url("../../public/assets/bg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+
+/* search bar */
+.search-bar-container {
+    text-align: center;
+    margin: 68px auto 20px;
+    position: relative;
+    width: 430px;
+    padding-right: 90px;
+
+    svg {
+        width: 26px;
+        position: absolute;
+        top: 13px;
+        left: 12px;
+        z-index: 2;
+    }
+
+    input {
+        width: 100%;
+        position: relative;
+        background-color: rgb(54, 54, 54);
+        font-size: 17px;
+        padding: 18px 18px 16px 54px;
+        outline: none;
+        border: none;
+        border-radius: 7px;
+        color: #d1d1d1;
+    }
+}
+
+.search-results {
+    margin: 5px auto;
+    width: 502px;
+    background-color: rgb(48, 48, 48);
+    max-height: 250px;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 4;
+    height: 0;
+    transition: height 0.3s ease-out;
+
+    .search-result-container {
+        width: 100%;
+        height: 60px;
+        padding: 5px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+
+        .search-result-img {
+            aspect-ratio: 1;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position-y: 0;
+            border-radius: 5px;
+        }
+
+        .result-texts-container {
+            margin-left: 20px;
+            width: 300px;
+            font-family: 'Fjalla One', sans-serif;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 7px;
+
+            .result-name {
+                margin-top: 3px;
+                font-size: 23px;
+                color: #eee;
+            }
+
+            .result-type {
+                margin-top: 11px;
+                font-size: 12px;
+                color: #cd3b5a;
+            }
+        }
+    }
+
+    .search-result-container:nth-of-type(2n+1) {
+        background-color: rgb(36, 36, 36);
+    }
+}
+
+.search-results.show {
+    opacity: 1;
+    visibility: visible;
+    transition: height 0.5s ease-in;
+    height: initial;
+}
+
+
+/* characters */
+.chars-title {
+    font-size: 38px;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    color: #eee;
+    margin: 50px auto 0;
+    letter-spacing: 2px;
+    cursor: default;
+
+    span {
+        color: #cd3b5a;
+    }
+}
+
+
+.characters-container {
+    margin: 24px auto 40px;
+    width: 1080px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    .character {
+        display: inline-flex;
+        width: 51px; //56
+        aspect-ratio: .72; //.67
+        border-radius: 2px;
+        position: relative;
+        margin: 5px 2px;
+        background-color: rgb(27, 27, 27);
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .1s ease-in-out;
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: 0.1s ease-in-out;
+            width: 100%;
+        }
+    }
+
+    .character:hover {
+        transform: scale(1.12);
+        z-index: 3;
+    }
+
+    .character:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 12px);
+        bottom: -2px;
+        left: 0;
+    }
+}
+
+
+/* 404 */
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+    font-family: sans-serif;
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #666;
+    }
+}
