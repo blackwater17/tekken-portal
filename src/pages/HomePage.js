@@ -85,12 +85,6 @@ const HomePage = () => {
             <h1 className='chars-title'>CHOOSE YOUR <span>CHARACTER</span></h1>
             <div className='characters-container'>
                 {characters.map((character, index) => (
-                    /*
-                    <a href={"/character/" + character.char_id + "/" + character.character_name.toLowerCase().replace(/ /g, "-") + "/"} key={index} className="character">
-                        <img src={`/tekken-portal/img/characters/small/${index + 1}.png`} alt="character" />
-                    </a>
-                    */
-
                     <NavLink
                         to={`/character/${character.char_id}/${character.character_name.toLowerCase().replace(/ /g, "-")}/`}
                         key={index}
@@ -98,7 +92,6 @@ const HomePage = () => {
                     >
                         <img src={`/tekken-portal/img/characters/small/${index + 1}.png`} alt="character" />
                     </NavLink>
-
                 ))}
             </div>
         </div>
